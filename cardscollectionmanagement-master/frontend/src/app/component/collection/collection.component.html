@@ -1,0 +1,8 @@
+<section class="d-flex flex-row flex-wrap">
+	<a id="addCard" class="deck rounded-3 m-2" (click)="navigateToCard()">
+		<img class="deck-icon rounded-3" src="assets/icons/add.svg" alt="add deck" width="48px">
+	</a>
+	<a class="deck rounded-3 m-2" *ngFor="let d of collection.decks" (click)="navigateToCard( d )">
+		<img class="deck-img rounded-3" src="{{ imageAPI + d.image }}" alt="deck">
+	</a>
+</section>

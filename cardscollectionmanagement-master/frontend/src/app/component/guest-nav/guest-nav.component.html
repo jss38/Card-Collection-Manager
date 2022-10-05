@@ -1,0 +1,27 @@
+<header class="navbar navbar-expand py-3 mb-4 border-bottom">
+	<div class="container-lg">
+
+		<a class="navbar-brand" href="/">
+			<img src="assets/logo.svg" alt="Logo" width="48" height="48">
+		</a>
+
+		<button class="navbar-toggler" 
+						type="button"
+						data-bs-toggle="collapse" 
+						data-bs-target="#navbarNavDropdown" 
+						aria-controls="navbarNavDropdown" 
+						aria-expanded="false" 
+						aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+			<nav class="nav">
+				<a class="nav-link link-dark-1 guest" routerLink="/register">Register</a>
+				<a class="nav-link link-dark-1 guest" routerLink="/login">Login</a>
+				<a class="nav-link link-dark-1 user" style="display: none; cursor: pointer;" (click)="logout()">Logout</a>
+			</nav>
+		</div>
+
+	</div>
+</header>

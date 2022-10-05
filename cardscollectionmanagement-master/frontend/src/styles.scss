@@ -1,0 +1,107 @@
+
+/********** load font **********/
+
+
+@font-face
+{
+	font-family: Inter;
+	src: url( './assets/font/Inter/Inter-VariableFont_slnt,wght.ttf' ) format( 'truetype-variations' );
+	font-display: swap;
+}
+
+
+/********** define colours **********/ 
+
+
+$dark-1: #2E3440;
+$dark-2: #3B4252;
+$dark-3: #434C5E;
+$dark-4: #4C566A;
+
+$light-1: #D8DEE9;
+$light-2: #E5E9F0;
+$light-3: #ECEFF4;
+
+$primary: #5E81AC;
+$secondary: #81A1C1;
+$tertiary: #88C0D0;
+$quaternary: #8FBCBB;
+
+
+/********** bootstrap **********/
+
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+
+// colours
+$custom-colors:
+(
+	'dark-1': $dark-1,
+	'dark-2': $dark-2,
+	'dark-3': $dark-3,
+	'dark-4': $dark-4,
+
+	'light-1': $light-1,
+	'light-2': $light-2,
+	'light-3': $light-3,
+
+	'primary': $primary,
+	'secondary': $secondary,
+	'tertiary': $tertiary,
+	'quaternary': $quaternary,
+);
+$theme-colors: map-merge( $theme-colors, $custom-colors );
+
+$body-bg: $light-3;
+$text-color: $dark-1;
+
+// typography
+$font-family-base: Inter;
+$font-size-percentage: 1;
+$font-size-base: 1rem * $font-size-percentage;
+$font-weight-base: 500;
+
+@import 'bootstrap/scss/bootstrap';
+
+
+/********** default **********/
+
+
+html
+{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body
+{
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	max-width: 100vw;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+code
+{
+	padding: 0.5rem 1rem;
+	display: block;
+	background-color: $light-1;
+}
+
+label
+{
+	margin: 0 0.5rem;
+	font-style: italic;
+}
+
+input
+{
+	padding: 0.25rem;
+	border: 1px solid $light-1;
+	border-radius: 0.5rem;
+}

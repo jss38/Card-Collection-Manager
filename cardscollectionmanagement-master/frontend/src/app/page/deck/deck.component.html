@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+  
+<div class="row">
+    <div class="leftcolumn">
+      <button class="btn" style="margin-top:20px;" (click)="goBack()">← Back</button>
+      <div class="card">
+        <h3>Deck image:</h3>
+				<img src="/assets/sample_decks/fontaine_blue.png" alt="">
+      </div>
+      <div class="card">
+        <h3>Product details:</h3>
+          <ul>
+						<li class="body-li"><p>Date of issue: </p><p id="date-of-issue">{{ deck.date_of_issue }}</p><br></li>
+            <li class="body-li"><p>Stock: </p><p id="stock" type="text"></p><br></li>
+            <li class="body-li"><p>Finish: </p><p id="finish" type="text"></p><br></li>
+            <li class="body-li"><p>Retail price: </p><p id="retail-price" type="number"></p><br></li>
+            <li class="body-li"><p>Print run: </p><p id="print-run" type="number"></p><br></li>
+						<li class="body-li"><p>Manufacturer: </p><p id="manufacturer" type="text"></p></li>
+          </ul>
+      </div>
+      <div class="card">
+        <h3>Other details:</h3>
+        <ul>
+          <li class="body-li"><p>Storage: </p><input id="storage" type="text"><br></li>
+          <li class="body-li"><p>Cost: </p><input id="cost" type="number"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h3>General details:</h3>
+        <ul>
+          <li class="body-li"><p>Title: </p><input id="title" type="text"><br><br></li>
+          <li class="body-li"><p>Edition: </p><input id="edition" type="text"><br><br></li>
+          <li class="body-li"><p>Style: </p><input id="style" type="text"><br><br></li>
+          <li class="body-li"><p>Brand: </p><input id="brand" type="text"><br><br></li>
+          <li class="body-li"><p>Product description: </p><textarea id="product-description"></textarea></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Inventory count:</h3>
+        <ul>
+          <li class="body-li"><p>Total: </p><input id="total" type="text"><br></li>
+          <li class="body-li"><p>Sealed: </p><input id="sealed" type="number"><br></li>
+          <li class="body-li"><p>Opened: </p><input id="opened" type="number"></li>
+        </ul>
+      </div>
+      <div style="margin-bottom:50px;" class="card">
+        <h3>Notes:</h3>
+        <textarea id="notes"></textarea><br>
+        <ul>
+          <li class="body-li"><button type="submit" form="addImageForm" class="btn btn-primary">Save inventory</button></li>
+        </ul>
+      </div>
+    </div>
+</div>

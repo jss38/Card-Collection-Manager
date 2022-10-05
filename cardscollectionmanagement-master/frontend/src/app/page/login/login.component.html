@@ -1,0 +1,21 @@
+<div class="split left">
+  <img src="assets/background.png">
+</div>
+
+<div class="split right">
+  <button class="btn" style="margin:20px;" (click)="goBack()">← Back</button>
+  <div class="centered">
+    <img src="assets/logo.svg">
+    <form id="loginInfo" onsubmit="return false">
+      <p class="topInput">Email: </p>
+      <input id = "email" type="text">
+      <br><br>
+      <p>Password: </p>
+      <input id = "password" type="password">
+      <br><br>
+      <button class="btn btn-primary" id="loginBtn" (click)="login()">Login</button>
+      <button class="btn btn-primary" id="registerBtn" (click)="navigateToRegister()">Register</button>
+    </form>
+  </div>
+</div>
+

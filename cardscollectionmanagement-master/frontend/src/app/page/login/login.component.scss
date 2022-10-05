@@ -1,0 +1,50 @@
+/* Split the screen in half */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow: hidden;
+}
+  
+/* Control the left side */
+.left {
+    left: 0;
+}
+
+img {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+  
+/* Control the right side */
+.right {
+    background: #f1f1f1;
+    right: 0;
+    font-family: Arial;
+}
+  
+/* If you want the content centered horizontally and vertically */
+.centered {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+  
+/* Style the image inside the centered container, if needed */
+.centered img {
+    width: 100px;
+}
+
+#registerBtn {
+    margin-left: 10px;
+}
+
+.topInput {
+    margin-top: 20px;
+}

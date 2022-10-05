@@ -1,0 +1,27 @@
+.leftcolumn {   
+    float: left;
+    width: 75%;
+}
+  
+.rightcolumn {
+    float: left;
+    width: 25%;
+    margin-right: 50px;
+    background-color: white;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    width: 200px;
+    height: auto;
+}
+
+h3 {
+    margin-top: 25px;
+}

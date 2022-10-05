@@ -1,0 +1,23 @@
+<div class="split left">
+  <img src="assets/background.png">
+</div>
+
+<div class="split right">
+  <button class="btn" style="margin:20px;" (click)="goBack()">← Back</button>
+  <div class="centered">
+    <img src="assets/logo.svg">
+    <form id="registerInfo" onsubmit="return false">
+      <p class="topInput">Name: </p>
+      <input id="name" type="text">
+      <br><br>
+      <p>Email: </p>
+      <input id="email" type="text">
+      <br><br>
+      <p>Password: </p>
+      <input id="pwd" type="password">
+      <br><br>
+      <button class="btn btn-primary" id="loginBtn" (click)="navigateToLogin()">Login</button>
+      <button type="submit" class="btn btn-primary" (click)="register()" id="registerBtn">Register</button>
+    </form>
+  </div>
+</div>

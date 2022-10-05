@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+  
+<div class="row">
+    <div class="leftcolumn">
+      <button class="btn" style="margin-top:20px;" (click)="goBack()">← Back</button>
+      <div class="card">
+        <h3>Deck image:</h3>
+				<img src="{{ deck ? this.url + 'images/' + deck.image : '' }}" id="img-preview" *ngIf="editable">
+        <form method="POST" 
+							id="addImageForm" 
+							action="{{ this.url + 'addImage' }}" 
+							enctype="multipart/form-data" 
+							*ngIf="editable"
+				>
+          <label for="deck-img">Select image:</label>
+          <br>
+          <input type="file" id="deck-img" name="deck-img" (change)="previewImage($event)">
+        </form>
+				<img src="{{ this.url + 'images/' + deck!.image! }}" alt="card image" *ngIf="deck && !editable">
+      </div>
+      <div class="card">
+        <h3>Product details:</h3>
+          <ul>
+            <li class="body-li"><p>Date of issue: </p><input id="date-of-issue" type="date"><br></li>
+            <li class="body-li"><p>Stock: </p><input id="stock" type="text"><br></li>
+            <li class="body-li"><p>Finish: </p><input id="finish" type="text"><br></li>
+            <li class="body-li"><p>Retail price: </p><input id="retail-price" type="number"><br></li>
+            <li class="body-li"><p>Print run: </p><input id="print-run" type="number"><br></li>
+            <li class="body-li"><p>Manufacturer: </p><input id="manufacturer" type="text"></li>
+          </ul>
+      </div>
+      <div class="card">
+        <h3>Other details:</h3>
+        <ul>
+          <li class="body-li"><p>Storage: </p><input id="storage" type="text"><br></li>
+          <li class="body-li"><p>Cost: </p><input id="cost" type="number"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h3>General details:</h3>
+        <ul>
+          <li class="body-li"><p>Title: </p><input id="name" type="text"><br><br></li>
+          <li class="body-li"><p>Edition: </p><input id="edition" type="text"><br><br></li>
+          <li class="body-li"><p>Style: </p><input id="style" type="text"><br><br></li>
+          <li class="body-li"><p>Brand: </p><input id="brand" type="text"><br><br></li>
+          <li class="body-li"><p>Product description: </p><textarea id="product-description"></textarea></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Inventory count:</h3>
+        <ul>
+          <li class="body-li"><p>Total: </p><input id="total" type="text"><br></li>
+          <li class="body-li"><p>Sealed: </p><input id="sealed" type="number"><br></li>
+          <li class="body-li"><p>Opened: </p><input id="opened" type="number"></li>
+        </ul>
+      </div>
+      <div style="margin-bottom:50px;" class="card">
+        <h3>Notes:</h3>
+        <ul>
+					<li class="body-li">
+						<textarea id="notes"></textarea><br>
+					</li>
+        </ul>
+      </div>
+      <div style="margin-bottom:50px;" class="">
+				<button type="submit" 
+								form="addImageForm" 
+								class="btn btn-primary me-3 text-white" 
+								style="min-width: 200px;"
+								(click)="saveInventory()"
+								*ngIf="editable"
+				>Save inventory</button>
+				<button class="btn btn-danger" 
+								style="min-width: 200px;"
+								(click)="setAllInputs()"
+								*ngIf="editable"
+								>Cancel</button>
+				<button class="btn btn-primary me-3 text-white" 
+								style="min-width: 200px;"
+								(click)="editAttributes()"
+								*ngIf="!editable"
+				>Edit</button>
+				<button class="btn btn-danger" 
+								style="min-width: 200px;"
+								(click)="deleteDeck()"
+								*ngIf="!editable"
+				>Delete</button>
+      </div>
+    </div>
+</div>

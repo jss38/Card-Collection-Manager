@@ -1,0 +1,47 @@
+<div class="slider-container"
+		 (swipeleft)="nextSlide()"
+		 (swiperight)="prevSlide()"
+>
+
+	<span class="arrow-left" (click)="prevSlide()"></span>
+	<span class="arrow-right" (click)="nextSlide()"></span>
+	
+	<div class="slider" id="slider">
+	
+		<div class="slide rounded-3"
+				 *ngFor="let s of slides; let i = index"
+				 [class.prev-2]="i == activeIndex - 2"
+				 [class.prev-1]="i == activeIndex - 1"
+				 [class.active]="i == activeIndex"
+				 [class.next-1]="i == activeIndex + 1"
+				 [class.next-2]="i == activeIndex + 2"
+		>
+			<img class="rounded-3" src="{{ s['image'] }}" alt="{{ s['name'] }}">
+			<!--hover over:	 -->
+			<!--{{ s['name'] }}-->
+		</div>
+	
+		<div class="slide rounded-3"
+				 [class.active]="slides.length == activeIndex"
+				 [class.next-1]="slides.length == activeIndex + 1"
+				 [class.next-2]="slides.length == activeIndex + 2"
+		>
+			<div class="border border-2 rounded-2 p-3">
+				<p>Don't see your deck?</p>
+				<a class="btn btn-secondary" (click)="redirection()">
+					Add a custom deck
+				</a>
+			</div>
+		</div>
+	
+	</div>
+
+	<!--probably don't need the dots-->
+	<!--<div class="dots">-->
+		<!--<span *ngFor="let s of slides; let i = index"-->
+					 <!--[class.active]="i == activeIndex"-->
+					 <!--(click)="jumpToSlide( i )">-->
+		<!--</span>-->
+	<!--</div>-->
+
+</div>

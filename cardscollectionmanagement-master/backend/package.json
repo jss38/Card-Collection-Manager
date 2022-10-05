@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongodb-session": "^3.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.4.4",
+    "multer": "^1.4.5-lts.1",
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "cardscollectionmanagement",
+  "description": "Cards Collection Application",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://csil-git1.cs.surrey.sfu.ca/cga57/cardscollectionmanagement.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": []
+}

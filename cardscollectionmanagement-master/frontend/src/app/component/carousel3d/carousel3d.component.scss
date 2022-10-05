@@ -1,0 +1,192 @@
+// variables
+@import '/src/styles.scss';
+$width: 250px;
+$height: 350px;
+
+.slider-container 
+{
+	display: block;
+	height: $height;
+	width: auto;
+	margin: 0 auto;
+	position: relative;
+	max-width: 1300px;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+
+	// draw arrows
+	.arrow
+	{
+		&-left
+		{
+			position: absolute;
+			left: 10%;
+			top: 50%;
+			transform: translate3d(0, -50%, 0);
+			color: white;
+			font-size: 28px;
+			cursor: pointer;
+			z-index: 9;
+			border-top: 15px solid transparent;
+			border-right: 30px solid $dark-1;
+			border-bottom: 15px solid transparent;
+
+			@media (max-width: 768px) 
+			{
+				display: none;
+			}
+		}
+
+		&-right 
+		{
+			position: absolute;
+			right: 10%;
+			top: 50%;
+			transform: translate3d(0, -50%, 0);
+			color: white;
+			font-size: 28px;
+			cursor: pointer;
+			z-index: 9;
+			border-top: 15px solid transparent;
+			border-left: 30px solid $dark-1;
+			border-bottom: 15px solid transparent;
+			
+			@media (max-width: 768px) 
+			{
+				display: none;
+			}
+		}
+	}
+
+	// dot container
+	.dots 
+	{
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		margin: 30px 0;
+		user-select: none;
+
+		// dot
+		span 
+		{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin-right: 2px;
+			cursor: pointer;
+			user-select: none;
+			padding: 10px 0;
+			position: relative;
+
+			// draw dot
+			&:before 
+			{
+				content: "";
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate3d(-50%, -50%, 0);
+				height: 10px;
+				width: 10px;
+				border-radius: 50%;
+				background-color: #ccc;
+				opacity: 0.6;
+			}
+
+			@media (max-width: 768px) 
+			{
+				width: 23px;
+				margin-bottom: 15px;
+			}
+
+			// active dot
+			&.active 
+			{
+				&:before 
+				{
+					background-color: $dark-1;
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	
+	.slider 
+	{
+		display: block;
+		width: 650px;
+		height: 100%;
+		margin: 0 auto;
+		position: relative;
+		text-align: center;
+		color: white;
+
+		@media (max-width: 768px) 
+		{
+			//height: 450px;
+		}
+
+		// item in slider
+		.slide 
+		{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			width: $width;
+			height: $height;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate3d(-50%, -50%, 0) scale3d(.4, .4, 1);
+			transition: transform 0.3s ease-in-out 0s, z-index .2s ease-in-out .1s;
+			background-color: $dark-4;
+
+			// background image
+			img
+			{
+				width: $width;
+				height: $height;
+				object-fit: cover;
+			}
+
+			// 5 slides on screen
+			&.prev-2 
+			{
+				transform: translate3d(-130%, -50%, 0) scale3d(.5, .5, 1);
+				z-index: 1;
+				opacity: 0.5;
+			}
+
+			&.prev-1 
+			{
+				transform: translate3d(-100%, -50%, 0) scale3d(.7, .7, 1);
+				z-index: 2;
+			}
+
+			&.next-1 
+			{
+				z-index: 2;
+				transform: translate3d(0%, -50%, 0) scale3d(.7, .7, 1);
+			}
+
+			&.next-2 
+			{
+				z-index: 1;
+				transform: translate3d(30%, -50%, 0) scale3d(.5, .5, 1);
+				opacity: 0.5;
+			}
+
+			&.active 
+			{
+				z-index: 3;
+				transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+				box-shadow: 0px 5px 15px 3px rgba(0, 0, 0, 0.3);
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+			}
+		}
+	}
+}

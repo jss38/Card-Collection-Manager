@@ -1,0 +1,18 @@
+<app-guest-nav *ngIf="!isLoggedIn"></app-guest-nav>
+<app-navbar *ngIf="isLoggedIn"></app-navbar>
+
+<h1 class="text-center my-5">All your cards in one place.</h1>
+
+<app-carousel3d [slides]="decks"></app-carousel3d>
+
+<form class="d-flex flex-column align-items-center" role="search">
+	<div class="input-group search-input mb-3">
+		<input class="form-control" type="search" placeholder="Search" aria-label="Search" disabled>
+		<button class="btn btn-light-1" type="submit" disabled>
+			<img src="assets/icons/search.svg" alt="Search" width="24px">
+		</button>
+	</div>
+	<button class="btn btn-secondary search-btn" type="submit" disabled>
+		Search Deck
+	</button>
+</form>
