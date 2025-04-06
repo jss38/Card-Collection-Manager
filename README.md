@@ -10,7 +10,7 @@ A web application for managing your card collections, built with Angular fronten
 │   ├── routes/         # API routes
 │   ├── images/         # Image storage
 │   ├── server.js       # Main server file
-│   └── authentication_server.js  # Authentication logic
+│   ...
 │
 ├── frontend/
 │   ├── src/           # Source files
